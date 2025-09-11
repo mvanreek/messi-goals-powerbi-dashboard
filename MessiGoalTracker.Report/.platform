@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MessiGoalTracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "de7b88db-4342-40d0-9b2e-3374d57a8e51"
+  }
+}

@@ -1,0 +1,91 @@
+table Goals
+	lineageTag: 5df342bc-5d40-4fe5-a3e8-2dfe1fbb0c45
+
+	measure Goals# = COUNT(Goals[GoalNr])
+		formatString: 0
+		lineageTag: 05f9e4fc-7449-4dde-8ca0-ec263cec2a30
+
+	column GoalNr
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bf1a489-d42b-4da0-9f59-05f3cfd86fff
+		summarizeBy: none
+		sourceColumn: GoalNr
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fa83056d-7e6f-4944-81c5-737f864a31d6
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: d21b16ab-0fb7-45ad-ad06-d483bc14cc28
+			defaultHierarchy: LocalDateTable_c2aeab24-a6ae-4db1-84c8-c9a32266ecce.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Competition
+		dataType: string
+		lineageTag: 8b0e82ed-7096-42d8-8376-8edf337dcf2a
+		summarizeBy: none
+		sourceColumn: Competition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Home team'
+		dataType: string
+		lineageTag: abf463ec-32c2-4037-b03d-712a3cdca5c1
+		summarizeBy: none
+		sourceColumn: Home team
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Away team'
+		dataType: string
+		lineageTag: d32acc55-446f-4847-a8bb-0a660bdc4e6c
+		summarizeBy: none
+		sourceColumn: Away team
+
+		annotation SummarizationSetBy = Automatic
+
+	column What
+		dataType: string
+		lineageTag: c48b06a6-8554-4e61-8086-defa16ae2e8e
+		summarizeBy: none
+		sourceColumn: What
+
+		annotation SummarizationSetBy = Automatic
+
+	column How
+		dataType: string
+		lineageTag: 0327a93e-3241-4683-9d75-9b12c9bace41
+		summarizeBy: none
+		sourceColumn: How
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Goals = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/13Z81oKYbcyXSiETIEd_HT-L7_pzJfL7YjKC_ISyrhD8/edit?pli=1&gid=0#gid=0"),
+				    Sheet1_Table = Source{[name="Sheet1",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Table, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"# Index", Int64.Type}, {"Date Date", type date}, {"CMP Competition", type text}, {"Home team Home team", type text}, {"Result Result", type any}, {"Away team Away team", type text}, {"MI Minute", type any}, {"Score Score", type any}, {"What What", type text}, {"How How", type text}, {"JS Jersey", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"# Index", "GoalNr"}, {"Date Date", "Date"}, {"CMP Competition", "Competition"}, {"Home team Home team", "Home team"}, {"Result Result", "Result"}, {"Away team Away team", "Away team"}, {"MI Minute", "Minute"}, {"Score Score", "Score"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"Score", type text}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"What What", "What"}, {"How How", "How"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"JS Jersey", "Score", "Minute", "Result"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

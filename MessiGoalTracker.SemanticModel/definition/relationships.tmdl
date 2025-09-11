@@ -1,0 +1,5 @@
+relationship d21b16ab-0fb7-45ad-ad06-d483bc14cc28
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Goals.Date
+	toColumn: LocalDateTable_c2aeab24-a6ae-4db1-84c8-c9a32266ecce.Date
+
