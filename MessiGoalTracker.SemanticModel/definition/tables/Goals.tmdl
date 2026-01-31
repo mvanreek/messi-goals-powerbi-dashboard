@@ -5,12 +5,19 @@ table Goals
 		formatString: 0
 		lineageTag: 05f9e4fc-7449-4dde-8ca0-ec263cec2a30
 
+	measure GoalsPenalty = CALCULATE(Goals[Goals#],Goals[TypeOfGoal1]="penalty")
+		formatString: 0
+		lineageTag: 214cf189-f377-48f6-a7c4-a076812b0b6c
+
 	column GoalNr
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 4bf1a489-d42b-4da0-9f59-05f3cfd86fff
 		summarizeBy: none
 		sourceColumn: GoalNr
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
@@ -42,17 +49,23 @@ table Goals
 
 	column 'Home team'
 		dataType: string
+		isHidden
 		lineageTag: abf463ec-32c2-4037-b03d-712a3cdca5c1
 		summarizeBy: none
 		sourceColumn: Home team
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Away team'
 		dataType: string
+		isHidden
 		lineageTag: d32acc55-446f-4847-a8bb-0a660bdc4e6c
 		summarizeBy: none
 		sourceColumn: Away team
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

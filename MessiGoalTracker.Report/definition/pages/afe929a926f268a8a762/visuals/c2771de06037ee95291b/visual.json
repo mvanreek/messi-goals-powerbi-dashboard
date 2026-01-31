@@ -6,7 +6,7 @@
     "y": 68.333333333333343,
     "z": 0,
     "height": 651.66666666666674,
-    "width": 1003.3333333333334,
+    "width": 883.33333333333337,
     "tabOrder": 0
   },
   "visual": {
@@ -164,7 +164,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "578e1c619a1b864128b0",
+        "name": "2b3358ce5dd4657f1791",
         "field": {
           "Column": {
             "Expression": {
@@ -178,7 +178,7 @@
         "type": "Categorical"
       },
       {
-        "name": "69adcb19ee9641b4e898",
+        "name": "b6594f54fd7bec6d784b",
         "field": {
           "Column": {
             "Expression": {
@@ -192,7 +192,7 @@
         "type": "Categorical"
       },
       {
-        "name": "79ca351c7cd01c0ca7a2",
+        "name": "598eec80b468d16223ba",
         "field": {
           "Column": {
             "Expression": {
@@ -206,7 +206,7 @@
         "type": "Categorical"
       },
       {
-        "name": "0b361b76004a665eb550",
+        "name": "08fed214253e2aa16d33",
         "field": {
           "Measure": {
             "Expression": {
@@ -220,7 +220,7 @@
         "type": "Advanced"
       },
       {
-        "name": "ee44f91aad54ef1660af",
+        "name": "36aa26003099cd1262ac",
         "field": {
           "Column": {
             "Expression": {
@@ -234,7 +234,7 @@
         "type": "Categorical"
       },
       {
-        "name": "12a3544043e48fffa86c",
+        "name": "9a4ce401c781c8551528",
         "field": {
           "Column": {
             "Expression": {
@@ -248,7 +248,7 @@
         "type": "Categorical"
       },
       {
-        "name": "c4dda3e6c0bcdc871106",
+        "name": "6b4c9c8f8584d683997c",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -273,7 +273,7 @@
         "type": "Advanced"
       },
       {
-        "name": "9313e14ff24d8d28607f",
+        "name": "22dee8345808e15f1e18",
         "field": {
           "Column": {
             "Expression": {

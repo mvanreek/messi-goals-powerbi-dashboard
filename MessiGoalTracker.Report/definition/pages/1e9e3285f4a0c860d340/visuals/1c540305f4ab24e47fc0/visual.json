@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "068668f80c8c27da6f25",
+  "name": "1c540305f4ab24e47fc0",
   "position": {
-    "x": 290,
+    "x": 481.66666666666669,
     "y": 5,
-    "z": 1000,
+    "z": 4001,
     "height": 121.66666666666667,
     "width": 173.33333333333334,
-    "tabOrder": 0
+    "tabOrder": 4001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "Goals"
                     }
                   },
-                  "Property": "Goals#"
+                  "Property": "GoalsPenalty"
                 }
               },
-              "queryRef": "Goals.Goals#",
-              "nativeQueryRef": "Goals#"
+              "queryRef": "Goals.GoalsPenalty",
+              "nativeQueryRef": "GoalsPenalty"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Goals"
                   }
                 },
-                "Property": "Goals#"
+                "Property": "GoalsPenalty"
               }
             },
             "direction": "Descending"
@@ -56,7 +56,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f7ead48163d9bdc10ad2",
+        "name": "a9b2454284347c33d535",
         "field": {
           "Measure": {
             "Expression": {
@@ -64,7 +64,7 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "Goals#"
+            "Property": "GoalsPenalty"
           }
         },
         "type": "Advanced"
