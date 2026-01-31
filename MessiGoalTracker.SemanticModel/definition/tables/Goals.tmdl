@@ -16,7 +16,7 @@ table Goals
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: yyyy-mm-dd
 		lineageTag: fa83056d-7e6f-4944-81c5-737f864a31d6
 		summarizeBy: none
 		sourceColumn: Date
@@ -29,6 +29,8 @@ table Goals
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Competition
 		dataType: string
@@ -54,19 +56,35 @@ table Goals
 
 		annotation SummarizationSetBy = Automatic
 
-	column What
+	column TypeOfGoal1
 		dataType: string
 		lineageTag: c48b06a6-8554-4e61-8086-defa16ae2e8e
 		summarizeBy: none
-		sourceColumn: What
+		sourceColumn: TypeOfGoal1
 
 		annotation SummarizationSetBy = Automatic
 
-	column How
+	column TypeOfGoal2
 		dataType: string
 		lineageTag: 0327a93e-3241-4683-9d75-9b12c9bace41
 		summarizeBy: none
-		sourceColumn: How
+		sourceColumn: TypeOfGoal2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 19ce2efe-1257-4c9f-987f-53643b33a854
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opponent
+		dataType: string
+		lineageTag: a78d42fb-be55-44d9-8af0-b9c17a141bc0
+		summarizeBy: none
+		sourceColumn: Opponent
 
 		annotation SummarizationSetBy = Automatic
 
@@ -81,9 +99,18 @@ table Goals
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"# Index", "GoalNr"}, {"Date Date", "Date"}, {"CMP Competition", "Competition"}, {"Home team Home team", "Home team"}, {"Result Result", "Result"}, {"Away team Away team", "Away team"}, {"MI Minute", "Minute"}, {"Score Score", "Score"}}),
 				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"Score", type text}}),
 				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"What What", "What"}, {"How How", "How"}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"JS Jersey", "Score", "Minute", "Result"})
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"JS Jersey", "Score", "Minute", "Result"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Team", each if [Date] >= #date(2023, 7, 1) and ([Home team] = "Inter Miami CF" or [Away team] = "Inter Miami CF")
+				  then "Inter Miami CF"
+				else if [Date] >= #date(2021, 9, 1) and [Date] < #date(2023, 7, 1) and ([Home team] = "Paris Saint-Germain" or [Away team] = "Paris Saint-Germain")
+				  then "Paris Saint-Germain"
+				else if [Date] < #date(2021, 9, 1) and ([Home team] = "FC Barcelona" or [Away team] = "FC Barcelona")
+				  then "FC Barcelona"
+				else "Argentina"),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Opponent", each if([Team] = [Home team]) then [Away team] else [Home team]),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom1",{{"What", "TypeOfGoal1"}, {"How", "TypeOfGoal2"}})
 				in
-				    #"Removed Columns"
+				    #"Renamed Columns2"
 
 	annotation PBI_NavigationStepName = Navigation
 

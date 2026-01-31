@@ -60,71 +60,10 @@
                     [
                       {
                         "Literal": {
-                          "Value": "2025L"
+                          "Value": "2021L"
                         }
                       }
                     ]
-                  ]
-                }
-              },
-              "Annotations": {
-                "filterExpressionMetadata": {
-                  "expressions": [
-                    {
-                      "HierarchyLevel": {
-                        "Expression": {
-                          "Hierarchy": {
-                            "Expression": {
-                              "PropertyVariationSource": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Entity": "Goals"
-                                  }
-                                },
-                                "Name": "Variation",
-                                "Property": "Date"
-                              }
-                            },
-                            "Hierarchy": "Date Hierarchy"
-                          }
-                        },
-                        "Level": "Year"
-                      }
-                    }
-                  ],
-                  "decomposedIdentities": {
-                    "values": [
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "2025L"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    ],
-                    "columns": [
-                      {
-                        "value": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "LocalDateTable_c2aeab24-a6ae-4db1-84c8-c9a32266ecce"
-                              }
-                            },
-                            "Property": "Year"
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "valueMap": [
-                    {
-                      "0": "2025"
-                    }
                   ]
                 }
               }
@@ -142,8 +81,6 @@
       {
         "name": "f7dd3842b0c689ec60ee",
         "boundFilter": "3cf842ec2ac3a705030c",
-        "asAggregation": false,
-        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "HierarchyLevel": {
             "Expression": {

@@ -5,7 +5,7 @@
     "x": 0,
     "y": 68.333333333333343,
     "z": 0,
-    "height": 500,
+    "height": 651.66666666666674,
     "width": 1003.3333333333334,
     "tabOrder": 0
   },
@@ -28,20 +28,6 @@
               },
               "queryRef": "Goals.Goals#",
               "nativeQueryRef": "Goals#"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Goals"
-                    }
-                  },
-                  "Property": "GoalNr"
-                }
-              },
-              "queryRef": "Goals.GoalNr",
-              "nativeQueryRef": "GoalNr"
             },
             {
               "field": {
@@ -70,53 +56,17 @@
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Goals"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Goals"
                     }
                   },
-                  "Level": "Month"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "Goals.Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Date Month"
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Goals"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Day"
-                }
-              },
-              "queryRef": "Goals.Date.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "Date Day"
+              "queryRef": "Goals.Date",
+              "nativeQueryRef": "Date"
             },
             {
               "field": {
@@ -140,11 +90,11 @@
                       "Entity": "Goals"
                     }
                   },
-                  "Property": "Home team"
+                  "Property": "Team"
                 }
               },
-              "queryRef": "Goals.Home team",
-              "nativeQueryRef": "Home team"
+              "queryRef": "Goals.Team",
+              "nativeQueryRef": "Team"
             },
             {
               "field": {
@@ -154,11 +104,11 @@
                       "Entity": "Goals"
                     }
                   },
-                  "Property": "Away team"
+                  "Property": "Opponent"
                 }
               },
-              "queryRef": "Goals.Away team",
-              "nativeQueryRef": "Away team"
+              "queryRef": "Goals.Opponent",
+              "nativeQueryRef": "Opponent"
             },
             {
               "field": {
@@ -168,7 +118,7 @@
                       "Entity": "Goals"
                     }
                   },
-                  "Property": "How"
+                  "Property": "TypeOfGoal2"
                 }
               },
               "queryRef": "Goals.How",
@@ -182,7 +132,7 @@
                       "Entity": "Goals"
                     }
                   },
-                  "Property": "What"
+                  "Property": "TypeOfGoal1"
                 }
               },
               "queryRef": "Goals.What",
@@ -201,7 +151,7 @@
                     "Entity": "Goals"
                   }
                 },
-                "Property": "GoalNr"
+                "Property": "Date"
               }
             },
             "direction": "Descending"
@@ -214,21 +164,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b18972b16eeaf4be342",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Goals"
-              }
-            },
-            "Property": "GoalNr"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4b907f0b6cab1a8c30be",
+        "name": "578e1c619a1b864128b0",
         "field": {
           "Column": {
             "Expression": {
@@ -242,7 +178,7 @@
         "type": "Categorical"
       },
       {
-        "name": "98aa3ff00b3f41365824",
+        "name": "69adcb19ee9641b4e898",
         "field": {
           "Column": {
             "Expression": {
@@ -250,13 +186,13 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "Home team"
+            "Property": "TypeOfGoal2"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "0af6bd99f85d1129aa0d",
+        "name": "79ca351c7cd01c0ca7a2",
         "field": {
           "Column": {
             "Expression": {
@@ -264,13 +200,27 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "Away team"
+            "Property": "TypeOfGoal1"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "fd7cb39654f20ca2945b",
+        "name": "0b361b76004a665eb550",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Goals"
+              }
+            },
+            "Property": "Goals#"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee44f91aad54ef1660af",
         "field": {
           "Column": {
             "Expression": {
@@ -278,13 +228,13 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "How"
+            "Property": "Team"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "5a1ca61c9e35278a7424",
+        "name": "12a3544043e48fffa86c",
         "field": {
           "Column": {
             "Expression": {
@@ -292,13 +242,13 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "What"
+            "Property": "Opponent"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "d36ec523af3aa0f1c5b7",
+        "name": "c4dda3e6c0bcdc871106",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -323,54 +273,18 @@
         "type": "Advanced"
       },
       {
-        "name": "1eb1919f4ac1abd29cbf",
+        "name": "9313e14ff24d8d28607f",
         "field": {
-          "HierarchyLevel": {
+          "Column": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Goals"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
+              "SourceRef": {
+                "Entity": "Goals"
               }
             },
-            "Level": "Month"
+            "Property": "Date"
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "8c9b6d9d0557b7f38234",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Goals"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Day"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

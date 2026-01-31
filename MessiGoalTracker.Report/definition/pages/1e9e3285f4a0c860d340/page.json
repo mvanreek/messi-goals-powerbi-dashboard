@@ -8,22 +8,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "c04efbd2e43c297f4e1e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Goals"
-              }
-            },
-            "Property": "Competition"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
         "name": "66e6598a501596b38181",
+        "ordinal": 0,
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -49,7 +35,8 @@
         "howCreated": "User"
       },
       {
-        "name": "9a82c5ecfddbc81b570f",
+        "name": "c04efbd2e43c297f4e1e",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -57,7 +44,39 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "How"
+            "Property": "Competition"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "4d6eeced6d706a38e508",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Goals"
+              }
+            },
+            "Property": "Team"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "810afecea0daea324f03",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Goals"
+              }
+            },
+            "Property": "Opponent"
           }
         },
         "type": "Categorical",
@@ -65,6 +84,7 @@
       },
       {
         "name": "e733a58d132aa6066185",
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -72,13 +92,30 @@
                 "Entity": "Goals"
               }
             },
-            "Property": "What"
+            "Property": "TypeOfGoal1"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "9a82c5ecfddbc81b570f",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Goals"
+              }
+            },
+            "Property": "TypeOfGoal2"
           }
         },
         "type": "Categorical",
         "howCreated": "User"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   },
   "objects": {
     "background": [
