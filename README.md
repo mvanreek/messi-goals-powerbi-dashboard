@@ -1,4 +1,5 @@
-Power BI Project (pbip) Messi Goals Tracker, with stats of all Messi goals.
+Power BI Dashboard Messi Goals Tracker, with stats of all Messi goals.
+NB: file is PBI-project (pbip), so not pbix.
 
 ![Messi Stats Dashboard](dashboard.png)
 
