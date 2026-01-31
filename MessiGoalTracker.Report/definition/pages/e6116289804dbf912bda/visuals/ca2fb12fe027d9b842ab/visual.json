@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "ca2fb12fe027d9b842ab",
+  "position": {
+    "x": 49.134236083877369,
+    "y": 134.17426007520359,
+    "z": 1000,
+    "height": 60.472905949387531,
+    "width": 427.08989826754947,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Repo: "
+                  },
+                  {
+                    "value": "https://github.com/mvanreek/messi-goals-powerbi-dashboard",
+                    "textStyle": {},
+                    "url": "https://: https://github.com/mvanreek/messi-goals-powerbi-dashboard"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

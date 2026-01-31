@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "eef7bdd0145901e24746",
+  "position": {
+    "x": 48.888888888888886,
+    "y": 11.111111111111111,
+    "z": 2000,
+    "height": 42.222222222222221,
+    "width": 672.22222222222217,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Blog: "
+                  },
+                  {
+                    "value": "https://worktimesheet2014.blogspot.com/https://github.com/mvanreek/messi-goals-powerbi-dashboard",
+                    "textStyle": {},
+                    "url": "https://worktimesheet2014.blogspot.com/https://github.com/mvanreek/messi-goals-powerbi-dashboard"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
